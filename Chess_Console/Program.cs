@@ -12,7 +12,7 @@ namespace Chess_Console
             {
                 Board board = new Board(8, 8);
                 board.PutPiece(new King(board, Color.Black), new Position(1, 1));
-                board.PutPiece(new Queen(board, Color.Black), new Position(2, 1));
+                board.PutPiece(new Queen(board, Color.White), new Position(2, 1));
                 board.PutPiece(new Tower(board, Color.Black), new Position(3, 1));
                 Screen.PrintBoard(board);
             }
