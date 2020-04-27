@@ -1,4 +1,4 @@
-﻿namespace Board
+﻿namespace GameBoard
 {
     class Board
     {
@@ -11,6 +11,11 @@
             Rows = rows;
             Columns = columns;
             Pieces = new Piece[Rows, Columns];
+        }
+
+        public Piece GetPiece(int row, int column)
+        {
+            return Pieces[row, column];
         }
     }
 }
