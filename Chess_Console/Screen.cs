@@ -1,4 +1,5 @@
 ﻿using System;
+using Chess;
 using GameBoard;
 
 namespace Chess_Console
@@ -41,6 +42,14 @@ namespace Chess_Console
                 Console.Write(p);
                 Console.ForegroundColor = aux;
             }
+        }
+
+        public static ChessPosition ReadChessPosition()
+        {
+            string s = Console.ReadLine();
+            char column = s[0];
+            int row = int.Parse(s[1] + "");
+            return new ChessPosition(column, row);
         }
     }
 }

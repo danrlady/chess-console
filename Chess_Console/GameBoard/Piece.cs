@@ -14,5 +14,10 @@
             Position = null;
             NumberOfMoves = 0;
         }
+
+        public void IncrementNumberOfMoves()
+        {
+            NumberOfMoves++;
+        }
     }
 }

@@ -10,11 +10,20 @@ namespace Chess_Console
         {
             try
             {
-                Board board = new Board(8, 8);
-                board.PutPiece(new King(board, Color.Black), new Position(1, 1));
-                board.PutPiece(new Queen(board, Color.White), new Position(2, 1));
-                board.PutPiece(new Tower(board, Color.Black), new Position(3, 1));
-                Screen.PrintBoard(board);
+                ChessMatch match = new ChessMatch();
+                while (!match.Finished)
+                {
+                    Console.Clear();
+                    Screen.PrintBoard(match.Board);
+
+                    Console.WriteLine();
+                    Console.Write("Origin: ");
+                    Position origin = Screen.ReadChessPosition().ToPosition();
+                    Console.Write("Destination: ");
+                    Position destination = Screen.ReadChessPosition().ToPosition();
+
+                    match.MovePiece(origin, destination);
+                }
             }
             catch(BoardException e)
             {

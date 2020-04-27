@@ -4,10 +4,10 @@ namespace Chess
 {
     class ChessPosition
     {
-        public char Row { get; set; }
-        public int Column { get; set; }
+        public int Row { get; set; }
+        public char Column { get; set; }
 
-        public ChessPosition(char row, int column)
+        public ChessPosition(char column, int row)
         {
             Row = row;
             Column = column;
