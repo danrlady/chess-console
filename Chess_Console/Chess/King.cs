@@ -8,6 +8,12 @@ namespace Chess
         {
         }
 
+        private bool CanMove(Position pos)
+        {
+            Piece p = Board.GetPiece(pos);
+            return p == null || p.Color != Color;
+        }
+
         public override bool[,] PossibleMoves()
         {
             bool[,] mat = new bool[Board.Rows, Board.Columns];
@@ -71,12 +77,6 @@ namespace Chess
             }
 
             return mat;
-        }
-
-        private bool CanMove(Position pos)
-        {
-            Piece p = Board.GetPiece(pos);
-            return p == null || p.Color != Color; 
         }
 
         public override string ToString()

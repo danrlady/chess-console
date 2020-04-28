@@ -8,13 +8,19 @@ namespace Chess
         {
         }
 
+        private bool CanMove(Position pos)
+        {
+            Piece p = Board.GetPiece(pos);
+            return p == null || p.Color != Color;
+        }
+
         public override bool[,] PossibleMoves()
         {
             bool[,] mat = new bool[Board.Rows, Board.Columns];
-
+            
             Position pos = new Position(0, 0);
 
-            //North
+            //North            
             pos.DefinePosition(Position.Row - 1, Position.Column);
             while (Board.ValidPosition(pos) && CanMove(pos))
             {
@@ -23,10 +29,11 @@ namespace Chess
                 {
                     break;
                 }
-                pos.Row = pos.Row - 1;
+                pos.Row--;
             }
+            
 
-            //East
+            //East            
             pos.DefinePosition(Position.Row, Position.Column + 1);
             while (Board.ValidPosition(pos) && CanMove(pos))
             {
@@ -35,10 +42,11 @@ namespace Chess
                 {
                     break;
                 }
-                pos.Column = pos.Column + 1;
+                pos.Column++;
             }
+            
 
-            //South
+            //South            
             pos.DefinePosition(Position.Row + 1, Position.Column);
             while (Board.ValidPosition(pos) && CanMove(pos))
             {
@@ -47,10 +55,11 @@ namespace Chess
                 {
                     break;
                 }
-                pos.Row = pos.Row + 1;
+                pos.Row++;
             }
+        
 
-            //West
+            //West            
             pos.DefinePosition(Position.Row, Position.Column - 1);
             while (Board.ValidPosition(pos) && CanMove(pos))
             {
@@ -59,17 +68,13 @@ namespace Chess
                 {
                     break;
                 }
-                pos.Column = pos.Column - 1;
+                pos.Column--;
             }
+            
 
             return mat;
         }
 
-        private bool CanMove(Position pos)
-        {
-            Piece p = Board.GetPiece(pos);
-            return p == null || p.Color != Color;
-        }
 
         public override string ToString()
         {

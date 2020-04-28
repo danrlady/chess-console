@@ -47,7 +47,7 @@
         
         public bool ValidPosition(Position pos)
         {
-            if (pos.Row < 0 || pos.Row > Rows || pos.Column < 0 || pos.Column > Columns)
+            if (pos.Row < 0 || pos.Row >= Rows || pos.Column < 0 || pos.Column >= Columns)
             {
                 return false;
             }

@@ -35,6 +35,7 @@ namespace Chess_Console
                     PrintPiece(board.GetPiece(i, j));
                 }
                 Console.WriteLine();
+                Console.BackgroundColor = originalColor;
             }
             Console.WriteLine();
             Console.WriteLine("   A B C D E F G H");
