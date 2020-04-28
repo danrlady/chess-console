@@ -15,9 +15,14 @@
             NumberOfMoves = 0;
         }
 
-        public void IncrementNumberOfMoves()
+        public void IncreaseNumberOfMoves()
         {
             NumberOfMoves++;
+        }
+
+        public void DecreaseNumberOfMoves()
+        {
+            NumberOfMoves--;
         }
 
         public bool HasPossibleMoves()
